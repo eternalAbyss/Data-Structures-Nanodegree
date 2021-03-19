@@ -5,6 +5,7 @@ def is_leap_year(year):
         return False 
     if (year % 4 == 0):
         return True 
+    return False
 
 def days_between_dates(year1, month1, date1, year2, month2, date2):
     """ Initial solution to the problem, the process is naive.
