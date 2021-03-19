@@ -1,7 +1,14 @@
 def is_leap_year(year):
-    return (year % 400 == 0) and (year % 100 != 0) and (year % 4 == 0)
+    if (year % 400 == 0):
+        return True 
+    if (year % 100 == 0):
+        return False 
+    if (year % 4 == 0):
+        return True 
 
 def days_between_dates(year1, month1, date1, year2, month2, date2):
+    """ Initial solution to the problem, the process is naive.
+    """
     days = 0
     years = year2 - year1
     days_list_leap = [31,29,31,30,31,30,31,31,30,31,30,31]
@@ -27,4 +34,5 @@ def days_between_dates(year1, month1, date1, year2, month2, date2):
             days += sum(days_list[:month2]) - (days_list[month2-1] - date2)
     return days 
 
-print(days_between_dates(2013, 1, 1, 2013, 1, 31))
+print(days_between_dates(2012, 1, 1, 2012, 3, 1))
+print(is_leap_year(2012))
