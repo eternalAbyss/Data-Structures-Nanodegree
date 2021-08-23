@@ -1,0 +1,24 @@
+Title
+-----
+BigO Analysis of the solutions
+
+
+Task 0
+------
+O(1)
+
+Task 1
+------
+O(n + n) => O(2n) => O(n)
+
+Task 2
+------
+O(n)
+
+Task 3
+------
+O(n + n + n + n log n) => O(3n) => O(n)
+
+Task 4
+------
+O(n + n + n + n + n log n) => O(4n + n log n) => O(n)

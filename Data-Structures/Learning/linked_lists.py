@@ -25,4 +25,4 @@ def printNodes(head):
 
 printNodes(head)
 node_insert(head,[23,54,34,65,3])
-printNodes()
+# printNodes()
