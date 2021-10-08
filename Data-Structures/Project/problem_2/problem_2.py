@@ -1,17 +1,16 @@
-def find_files(suffix, path):
-    """
-    Find all files beneath path with file name suffix.
+import os
 
-    Note that a path may contain further subdirectories
-    and those subdirectories may also contain further subdirectories.
 
-    There are no limit to the depth of the subdirectories can be.
+def file_explorer(path, file_list=[]):
+    for each in os.listdir(path):
+        inner_path = os.path.join(path, each)
+        if os.path.isdir(inner_path):
+            return file_explorer(inner_path)
+        else:
+            if each[-2:] == ".c":
+                file_list.append(inner_path)
+            return
+    return file_list
 
-    Args:
-      suffix(str): suffix if the file name to be found
-      path(str): path of the file system
 
-    Returns:
-       a list of paths
-    """
-    return None
+print(file_explorer('./testdir'))
