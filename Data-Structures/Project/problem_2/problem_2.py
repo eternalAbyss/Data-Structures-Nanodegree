@@ -1,16 +1,18 @@
 import os
 
 
-def file_explorer(path, file_list=[]):
+def find_files(path, files=[]):
     for each in os.listdir(path):
         inner_path = os.path.join(path, each)
         if os.path.isdir(inner_path):
-            return file_explorer(inner_path)
+            find_files(inner_path, files)
         else:
-            if each[-2:] == ".c":
-                file_list.append(inner_path)
-            return
-    return file_list
+            if each.endswith('.c'):
+                files.append(inner_path)
+    return files
 
 
-print(file_explorer('./testdir'))
+basepath = './testdir'
+output = find_files(basepath)
+for each in output:
+    print(each)
